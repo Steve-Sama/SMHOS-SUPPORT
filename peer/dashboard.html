@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Peer Dashboard | SMHOS</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/peer.css"
+    >
+
+</head>
+
+
+<body class="peer-page">
+
+
+    <!-- TOP BAR -->
+
+    <header class="peer-topbar">
+
+        <div class="peer-brand">
+
+            <img
+                src="../assets/logo.png"
+                alt="SMHOS"
+            >
+
+            <div>
+
+                <strong>SMHOS</strong>
+
+                <span>Peer Support</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="peer-topbar-right">
+
+            <div
+                id="peerStatus"
+                class="peer-status offline"
+            >
+
+                <span class="status-dot"></span>
+
+                <span id="peerStatusText">
+                    Offline
+                </span>
+
+            </div>
+
+
+            <button
+                id="peerLogoutButton"
+                class="peer-logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="peer-main">
+
+
+        <!-- WELCOME -->
+
+        <section class="peer-welcome">
+
+            <div>
+
+                <span class="peer-eyebrow">
+                    PEER LISTENER PORTAL
+                </span>
+
+                <h1>
+                    Welcome back,
+                    <span id="peerName">
+                        Peer
+                    </span>
+                </h1>
+
+                <p>
+                    Your support presence can make a difference
+                    in a student's day.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- AVAILABILITY -->
+
+        <section class="peer-availability-card">
+
+            <div class="availability-content">
+
+                <div class="availability-icon">
+                    ♥
+                </div>
+
+                <div>
+
+                    <span class="availability-label">
+                        YOUR AVAILABILITY
+                    </span>
+
+                    <h2 id="availabilityHeading">
+                        You're currently offline
+                    </h2>
+
+                    <p id="availabilityDescription">
+                        Go online when you're ready to receive
+                        student support requests.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="availabilityButton"
+                class="availability-button"
+            >
+                Go Online
+            </button>
+
+        </section>
+
+
+
+        <!-- STATISTICS -->
+
+        <section class="peer-stats-grid">
+
+
+            <div class="peer-stat-card">
+
+                <span
+                    class="peer-stat-number"
+                    id="pendingCount"
+                >
+                    0
+                </span>
+
+                <span class="peer-stat-label">
+                    Pending Requests
+                </span>
+
+            </div>
+
+
+            <div class="peer-stat-card">
+
+                <span
+                    class="peer-stat-number"
+                    id="activeCount"
+                >
+                    0
+                </span>
+
+                <span class="peer-stat-label">
+                    Active Sessions
+                </span>
+
+            </div>
+
+
+            <div class="peer-stat-card">
+
+                <span
+                    class="peer-stat-number"
+                    id="completedCount"
+                >
+                    0
+                </span>
+
+                <span class="peer-stat-label">
+                    Completed
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- INCOMING REQUESTS -->
+
+        <section class="peer-section">
+
+            <div class="peer-section-heading">
+
+                <div>
+
+                    <span class="peer-section-label">
+                        SUPPORT
+                    </span>
+
+                    <h2>
+                        Incoming Requests
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="requests.html"
+                    class="quick-card"
+                >
+                    View all →
+                </a>
+
+            </div>
+
+
+            <!-- REQUEST PREVIEW -->
+
+            <div
+                id="requestPreview"
+                class="peer-request-preview"
+            >
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="dashboardRequestLoading"
+                    class="dashboard-request-loading"
+                >
+
+                    Checking for requests...
+
+                </div>
+
+
+
+                <!-- EMPTY -->
+
+                <div
+                    id="dashboardRequestEmpty"
+                    class="peer-empty-state"
+                    hidden
+                >
+
+                    <div class="empty-state-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        No pending requests
+                    </h3>
+
+                    <p>
+                        New student support requests will
+                        appear here when you're online.
+                    </p>
+
+                </div>
+
+
+
+                <!-- REQUEST PREVIEW -->
+
+                <div
+                    id="dashboardRequestPreview"
+                    class="dashboard-request-preview"
+                    hidden
+                >
+
+                    <div class="dashboard-request-preview-top">
+
+                        <strong id="dashboardRequestType">
+                            Peer Support
+                        </strong>
+
+                        <span id="dashboardRequestTime">
+                            Just now
+                        </span>
+
+                    </div>
+
+
+                    <p id="dashboardRequestMessage">
+                        A student is waiting for support.
+                    </p>
+
+
+                    <a
+                        href="requests.html"
+                        class="dashboard-view-requests"
+                    >
+                        View Requests
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="peer-section">
+
+            <div class="peer-section-heading">
+
+                <div>
+
+                    <span class="peer-section-label">
+                        WORKSPACE
+                    </span>
+
+                    <h2>
+                        Quick Access
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="peer-quick-grid">
+
+
+                <a
+                    href="requests.html"
+                    class="peer-quick-card"
+                >
+
+                    <div class="quick-card-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Support Requests
+                        </h3>
+
+                        <p>
+                            View and respond to student requests.
+                        </p>
+
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+
+
+                <a
+                    href="sessions.html"
+                    class="peer-quick-card"
+                >
+
+                    <div class="quick-card-icon">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            My Sessions
+                        </h3>
+
+                        <p>
+                            View your active and previous sessions.
+                        </p>
+
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+
+
+                <a
+                    href="profile.html"
+                    class="peer-quick-card"
+                >
+
+                    <div class="quick-card-icon">
+                        ●
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            My Profile
+                        </h3>
+
+                        <p>
+                            Manage your peer profile and availability.
+                        </p>
+
+                    </div>
+
+                    <span>→</span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- GUIDELINES -->
+
+        <section class="peer-guidelines">
+
+            <div class="guidelines-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <span class="peer-section-label">
+                    PEER LISTENER GUIDELINES
+                </span>
+
+                <h2>
+                    Support, don't diagnose.
+                </h2>
+
+                <p>
+                    Listen without judgement, respect privacy,
+                    and encourage students to seek professional
+                    support when necessary. Peer listeners do not
+                    diagnose mental health conditions or replace
+                    professional counsellors.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- BOTTOM NAV -->
+
+    <nav class="peer-bottom-nav">
+
+        <a
+            href="dashboard.html"
+            class="peer-nav-item active"
+        >
+
+            <span>⌂</span>
+
+            <small>
+                Home
+            </small>
+
+        </a>
+
+
+        <a
+            href="requests.html"
+            class="peer-nav-item"
+        >
+
+            <span>!</span>
+
+            <small>
+                Requests
+            </small>
+
+        </a>
+
+
+        <a
+            href="sessions.html"
+            class="peer-nav-item"
+        >
+
+            <span>◉</span>
+
+            <small>
+                Sessions
+            </small>
+
+        </a>
+
+
+        <a
+            href="profile.html"
+            class="peer-nav-item"
+        >
+
+            <span>●</span>
+
+            <small>
+                Profile
+            </small>
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- PEER JAVASCRIPT -->
+
+    <script
+        type="module"
+        src="../js/peer.js"
+    ></script>
+
+</body>
+
+</html>

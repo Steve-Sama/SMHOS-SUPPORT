@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Peer Listener Login | SMHOS</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body class="support-login-page">
+
+
+    <main class="support-login-container">
+
+
+        <!-- BRAND -->
+
+        <div class="support-login-brand">
+
+            <a href="index.html">
+
+                <img
+                    src="assets/logo.png"
+                    alt="SMHOS"
+                >
+
+            </a>
+
+            <div>
+
+                <strong>SMHOS</strong>
+
+                <span>
+                    Support Network
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN CARD -->
+
+        <section class="support-login-card">
+
+
+            <div class="support-login-heading">
+
+                <span class="login-role-badge peer-badge">
+                    PEER LISTENER
+                </span>
+
+                <h1>
+                    Welcome back
+                </h1>
+
+                <p>
+                    Sign in to access your peer support workspace.
+                </p>
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                id="loginError"
+                class="login-error"
+                hidden
+            ></div>
+
+
+            <!-- FORM -->
+
+            <form id="peerLoginForm">
+
+
+                <div class="support-form-group">
+
+                    <label for="email">
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="support-form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="loginButton"
+                    class="support-login-button"
+                >
+                    Sign In
+                </button>
+
+
+            </form>
+
+
+            <div class="support-login-note">
+
+                <span>🔒</span>
+
+                <p>
+                    This portal is restricted to
+                    university-approved and verified
+                    peer listeners.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <a
+            href="index.html"
+            class="back-support-link"
+        >
+            ← Back to Support Network
+        </a>
+
+
+    </main>
+
+
+    <script
+        type="module"
+        src="js/peer.js"
+    ></script>
+
+</body>
+
+</html>

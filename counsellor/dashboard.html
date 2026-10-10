@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Counsellor Dashboard | SMHOS</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/counsellor.css">
+</head>
+
+<body class="counsellor-page">
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="counsellor-sidebar" id="counsellorSidebar">
+
+        <div class="counsellor-brand">
+
+            <img
+                src="../assets/logo.png"
+                alt="SMHOS Logo"
+                class="counsellor-brand-logo"
+            >
+
+            <div class="counsellor-brand-text">
+                <h2>SMHOS</h2>
+                <span>COUNSELLOR PORTAL</span>
+            </div>
+
+        </div>
+
+
+        <div class="counsellor-profile-summary">
+
+            <div class="counsellor-avatar" id="counsellorAvatar">
+                C
+            </div>
+
+            <div class="counsellor-profile-info">
+                <h3 id="counsellorName">Counsellor</h3>
+                <p>Professional Support</p>
+            </div>
+
+        </div>
+
+
+        <nav class="counsellor-navigation">
+
+            <span class="counsellor-nav-label">
+                WORKSPACE
+            </span>
+
+            <a
+                href="dashboard.html"
+                class="counsellor-nav-link active"
+            >
+                <span class="nav-icon">▦</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="appointments.html"
+                class="counsellor-nav-link"
+            >
+                <span class="nav-icon">▣</span>
+                <span>Appointments</span>
+            </a>
+
+
+            <a
+                href="students.html"
+                class="counsellor-nav-link"
+            >
+                <span class="nav-icon">♙</span>
+                <span>Students</span>
+            </a>
+
+
+            <a
+                href="sessions.html"
+                class="counsellor-nav-link"
+            >
+                <span class="nav-icon">◷</span>
+                <span>Sessions</span>
+            </a>
+
+
+            <span class="counsellor-nav-label counsellor-nav-label-bottom">
+                INSIGHTS
+            </span>
+
+
+            <a
+                href="analytics.html"
+                class="counsellor-nav-link"
+            >
+                <span class="nav-icon">▥</span>
+                <span>Analytics</span>
+            </a>
+
+        </nav>
+
+
+        <div class="counsellor-sidebar-footer">
+
+            <div class="counsellor-online-indicator"></div>
+
+            <span>Secure Support Portal</span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="counsellor-main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="counsellor-topbar">
+
+            <div class="counsellor-topbar-left">
+
+                <button
+                    type="button"
+                    id="counsellorMenuToggle"
+                    class="counsellor-menu-toggle"
+                    aria-label="Toggle navigation"
+                >
+                    ☰
+                </button>
+
+                <div>
+                    <p class="counsellor-breadcrumb">
+                        Workspace / Dashboard
+                    </p>
+
+                    <h1>Dashboard</h1>
+                </div>
+
+            </div>
+
+
+            <div class="counsellor-topbar-right">
+
+                <div class="counsellor-today">
+                    <span>Today</span>
+                    <strong id="counsellorCurrentDate">Loading...</strong>
+                </div>
+
+                <button
+                    type="button"
+                    id="counsellorLogoutButton"
+                    class="counsellor-logout-button"
+                >
+                    Sign Out
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <section class="counsellor-content">
+
+
+            <!-- WELCOME BANNER -->
+
+            <section class="counsellor-welcome-banner">
+
+                <div class="counsellor-welcome-text">
+
+                    <span class="counsellor-eyebrow">
+                        STUDENT WELLBEING
+                    </span>
+
+                    <h2>
+                        Welcome back,
+                        <span id="welcomeCounsellorName">
+                            Counsellor
+                        </span>
+                    </h2>
+
+                    <p>
+                        Every conversation can make a difference.
+                        Review incoming requests and continue
+                        supporting student wellbeing.
+                    </p>
+
+                </div>
+
+
+                <div class="counsellor-welcome-decoration">
+                    <div class="welcome-circle">
+                        ♡
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="counsellor-statistics">
+
+                <article class="counsellor-stat-card">
+
+                    <div class="counsellor-stat-top">
+                        <span>Pending Requests</span>
+                        <span class="stat-icon pending-icon">◷</span>
+                    </div>
+
+                    <h2 id="pendingRequestsCount">—</h2>
+
+                    <p>Awaiting your review</p>
+
+                </article>
+
+
+                <article class="counsellor-stat-card">
+
+                    <div class="counsellor-stat-top">
+                        <span>My Active Requests</span>
+                        <span class="stat-icon active-icon">↗</span>
+                    </div>
+
+                    <h2 id="activeRequestsCount">—</h2>
+
+                    <p>Requests assigned to you</p>
+
+                </article>
+
+
+                <article class="counsellor-stat-card">
+
+                    <div class="counsellor-stat-top">
+                        <span>Upcoming Appointments</span>
+                        <span class="stat-icon appointment-icon">▣</span>
+                    </div>
+
+                    <h2 id="upcomingAppointmentsCount">—</h2>
+
+                    <p>Scheduled appointments</p>
+
+                </article>
+
+
+                <article class="counsellor-stat-card">
+
+                    <div class="counsellor-stat-top">
+                        <span>Completed Sessions</span>
+                        <span class="stat-icon completed-icon">✓</span>
+                    </div>
+
+                    <h2 id="completedSessionsCount">—</h2>
+
+                    <p>Sessions completed</p>
+
+                </article>
+
+            </section>
+
+
+            <!-- INCOMING REQUESTS -->
+
+            <section class="counsellor-section">
+
+                <div class="counsellor-section-heading">
+
+                    <div>
+                        <span class="counsellor-section-eyebrow">
+                            STUDENT SUPPORT
+                        </span>
+
+                        <h2>Incoming Requests</h2>
+
+                        <p>
+                            Review new requests and decide which
+                            ones you can take responsibility for.
+                        </p>
+                    </div>
+
+                    <a
+                        href="appointments.html"
+                        class="counsellor-view-all"
+                    >
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div
+                    id="counsellorRequestsContainer"
+                    class="counsellor-requests-container"
+                >
+
+                    <div class="counsellor-loading-state">
+
+                        <div class="counsellor-loading-spinner"></div>
+
+                        <p>Loading support requests...</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- LOWER DASHBOARD GRID -->
+
+            <div class="counsellor-dashboard-grid">
+
+
+                <!-- RECENT ACTIVITY -->
+
+                <section class="counsellor-section counsellor-activity-section">
+
+                    <div class="counsellor-section-heading">
+
+                        <div>
+                            <span class="counsellor-section-eyebrow">
+                                YOUR WORKSPACE
+                            </span>
+
+                            <h2>Recent Activity</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="counsellorRecentActivity"
+                        class="counsellor-activity-list"
+                    >
+
+                        <div class="counsellor-empty-state">
+
+                            <div class="empty-state-icon">
+                                ◷
+                            </div>
+
+                            <h3>No recent activity</h3>
+
+                            <p>
+                                Your recent counselling activities
+                                will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <section class="counsellor-section counsellor-quick-actions">
+
+                    <div class="counsellor-section-heading">
+
+                        <div>
+                            <span class="counsellor-section-eyebrow">
+                                SHORTCUTS
+                            </span>
+
+                            <h2>Quick Access</h2>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="appointments.html"
+                        class="counsellor-quick-action"
+                    >
+
+                        <span class="quick-action-icon">▣</span>
+
+                        <span>
+                            <strong>Appointments</strong>
+                            <small>Review scheduled appointments</small>
+                        </span>
+
+                        <span class="quick-action-arrow">→</span>
+
+                    </a>
+
+
+                    <a
+                        href="students.html"
+                        class="counsellor-quick-action"
+                    >
+
+                        <span class="quick-action-icon">♙</span>
+
+                        <span>
+                            <strong>Student Support</strong>
+                            <small>View your assigned students</small>
+                        </span>
+
+                        <span class="quick-action-arrow">→</span>
+
+                    </a>
+
+
+                    <a
+                        href="sessions.html"
+                        class="counsellor-quick-action"
+                    >
+
+                        <span class="quick-action-icon">◷</span>
+
+                        <span>
+                            <strong>Counselling Sessions</strong>
+                            <small>Manage your sessions</small>
+                        </span>
+
+                        <span class="quick-action-arrow">→</span>
+
+                    </a>
+
+                </section>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <footer class="counsellor-footer">
+
+                <p>
+                    SMHOS — Student Mental Health Operating System
+                </p>
+
+                <span>
+                    Supporting student wellbeing, one conversation at a time.
+                </span>
+
+            </footer>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- MOBILE SIDEBAR OVERLAY -->
+
+    <div
+        id="counsellorSidebarOverlay"
+        class="counsellor-sidebar-overlay"
+    ></div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script
+        type="module"
+        src="../js/counsellor.js"
+    ></script>
+
+</body>
+
+</html>

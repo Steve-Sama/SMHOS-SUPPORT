@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Counsellor Login | SMHOS</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/counsellor.css">
+
+<style>
+    .counsellor-login-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #f4f7fb;
+    }
+
+    .counsellor-login-card {
+        width: 100%;
+        max-width: 430px;
+        padding: 36px;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 12px 40px rgba(24, 39, 75, 0.09);
+    }
+
+    .counsellor-login-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .counsellor-login-brand img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+    }
+
+    .counsellor-login-brand h1 {
+        margin: 0;
+        font-size: 23px;
+        color: #173b57;
+    }
+
+    .counsellor-login-brand p {
+        margin: 4px 0 0;
+        font-size: 13px;
+        color: #718096;
+    }
+
+    .counsellor-login-heading {
+        margin-bottom: 26px;
+    }
+
+    .counsellor-login-heading h2 {
+        margin: 0 0 9px;
+        font-size: 27px;
+        color: #173b57;
+    }
+
+    .counsellor-login-heading p {
+        margin: 0;
+        color: #718096;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+    .counsellor-login-form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .counsellor-login-field label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #344054;
+    }
+
+    .counsellor-login-field input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 13px 14px;
+        border: 1px solid #d8e0e8;
+        border-radius: 10px;
+        outline: none;
+        font-size: 15px;
+        background: #fff;
+    }
+
+    .counsellor-login-field input:focus {
+        border-color: #2876a8;
+        box-shadow: 0 0 0 3px rgba(40, 118, 168, 0.12);
+    }
+
+    .counsellor-password-wrapper {
+        position: relative;
+    }
+
+    .counsellor-password-wrapper input {
+        padding-right: 65px;
+    }
+
+    .counsellor-password-toggle {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        color: #2876a8;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .counsellor-login-button {
+        width: 100%;
+        padding: 14px;
+        margin-top: 4px;
+        border: none;
+        border-radius: 10px;
+        background: #176b87;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .counsellor-login-button:hover {
+        background: #12566d;
+    }
+
+    .counsellor-login-button:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+
+    .counsellor-login-error {
+        display: none;
+        padding: 12px;
+        border-radius: 9px;
+        background: #fff0f0;
+        color: #b42318;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .counsellor-login-footer {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 13px;
+        color: #718096;
+    }
+
+    .counsellor-login-footer a {
+        color: #176b87;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+        .counsellor-login-card {
+            padding: 26px 21px;
+        }
+
+        .counsellor-login-heading h2 {
+            font-size: 24px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<main class="counsellor-login-page">
+
+    <section class="counsellor-login-card">
+
+        <div class="counsellor-login-brand">
+            <img src="assets/logo.png" alt="SMHOS logo">
+
+            <div>
+                <h1>SMHOS</h1>
+                <p>Counsellor Support Portal</p>
+            </div>
+        </div>
+
+        <div class="counsellor-login-heading">
+            <h2>Welcome back</h2>
+            <p>
+                Sign in to access your counselling dashboard
+                and manage student support requests.
+            </p>
+        </div>
+
+        <form id="counsellorLoginForm" class="counsellor-login-form">
+
+            <div class="counsellor-login-field">
+                <label for="counsellorEmail">Email address</label>
+
+                <input
+                    type="email"
+                    id="counsellorEmail"
+                    placeholder="Enter your email address"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="counsellor-login-field">
+                <label for="counsellorPassword">Password</label>
+
+                <div class="counsellor-password-wrapper">
+                    <input
+                        type="password"
+                        id="counsellorPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="toggleCounsellorPassword"
+                        class="counsellor-password-toggle"
+                    >
+                        Show
+                    </button>
+                </div>
+            </div>
+
+            <div
+                id="counsellorLoginError"
+                class="counsellor-login-error"
+                role="alert"
+            ></div>
+
+            <button
+                type="submit"
+                id="counsellorLoginButton"
+                class="counsellor-login-button"
+            >
+                Sign In
+            </button>
+
+        </form>
+
+        <div class="counsellor-login-footer">
+            <p>
+                Student support matters.
+                <a href="index.html">Return to SMHOS Support</a>
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<script type="module" src="js/counsellor-auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Support Requests | SMHOS</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/peer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/requests.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="requests-app">
+
+
+        <!-- =========================================
+             TOP BAR
+        ========================================== -->
+
+        <header class="requests-topbar">
+
+            <a
+                href="dashboard.html"
+                class="requests-brand"
+            >
+
+                <div class="requests-brand-mark">
+                <img src="../assets/logo.png" alt="SMHOS">
+                </div>
+
+                <div class="requests-brand-text">
+
+                    <strong>SMHOS</strong>
+
+                    <span>
+                        Peer Support
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div
+                class="requests-online-status"
+                id="onlineStatus"
+            >
+
+                <span
+                    class="online-status-dot"
+                    id="onlineStatusDot"
+                ></span>
+
+                <span id="onlineStatusText">
+                    Checking...
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+        ========================================== -->
+
+        <main class="requests-main">
+
+
+            <!-- PAGE INTRO -->
+
+            <section class="requests-intro">
+
+                <div>
+
+                    <p class="requests-eyebrow">
+                        PEER SUPPORT
+                    </p>
+
+                    <h1>
+                        Support Requests
+                    </h1>
+
+                    <p class="requests-description">
+                        Students who are currently looking
+                        for someone to talk to.
+                    </p>
+
+                </div>
+
+
+                <div class="requests-counter">
+
+                    <span id="requestCount">
+                        0
+                    </span>
+
+                    <small>
+                        waiting
+                    </small>
+
+                </div>
+
+            </section>
+
+
+            <!-- OFFLINE WARNING -->
+
+            <div
+                class="requests-notice"
+                id="offlineNotice"
+                hidden
+            >
+
+                <div class="notice-icon">
+                    !
+                </div>
+
+                <div>
+
+                    <strong>
+                        You're offline
+                    </strong>
+
+                    <p>
+                        Go online from your dashboard
+                        before accepting a support request.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                class="requests-error"
+                id="requestError"
+                hidden
+            >
+
+                <strong>
+                    Unable to load requests
+                </strong>
+
+                <p id="requestErrorMessage">
+                    Please check your connection and try again.
+                </p>
+
+                <button
+                    type="button"
+                    id="retryButton"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+
+            <!-- LOADING -->
+
+            <div
+                class="requests-loading"
+                id="loadingState"
+            >
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading support requests...
+                </p>
+
+            </div>
+
+
+            <!-- REQUEST LIST -->
+
+            <section
+                class="requests-list"
+                id="requestList"
+                hidden
+            >
+            </section>
+
+
+            <!-- EMPTY STATE -->
+
+            <section
+                class="requests-empty"
+                id="emptyState"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    <span>♡</span>
+                </div>
+
+                <h2>
+                    No requests right now
+                </h2>
+
+                <p>
+                    There are currently no students
+                    waiting for peer support.
+                </p>
+
+                <button
+                    type="button"
+                    id="refreshButton"
+                    class="refresh-button"
+                >
+                    Refresh Requests
+                </button>
+
+            </section>
+
+
+            <!-- GUIDELINE -->
+
+            <section class="peer-reminder">
+
+                <div class="reminder-icon">
+                    ♥
+                </div>
+
+                <div>
+
+                    <strong>
+                        Remember your role
+                    </strong>
+
+                    <p>
+                        Listen, support and encourage.
+                        Do not diagnose, prescribe or act
+                        as a professional therapist.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- =========================================
+             BOTTOM NAVIGATION
+        ========================================== -->
+
+        <nav class="requests-bottom-nav">
+
+            <a
+                href="dashboard.html"
+                class="requests-nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+
+            <a
+                href="requests.html"
+                class="requests-nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ♡
+                </span>
+
+                <span>
+                    Requests
+                </span>
+
+                <b
+                    class="nav-badge"
+                    id="navRequestCount"
+                    hidden
+                >
+                    0
+                </b>
+
+            </a>
+
+
+            <a
+                href="sessions.html"
+                class="requests-nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Sessions
+                </span>
+
+            </a>
+
+
+            <a
+                href="profile.html"
+                class="requests-nav-item"
+            >
+
+                <span class="nav-icon">
+                    ○
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+        </nav>
+
+
+    </div>
+
+
+    <!-- REQUESTS PAGE LOGIC ONLY -->
+
+    <script
+        type="module"
+        src="../js/requests.js"
+    ></script>
+
+</body>
+
+</html>
